@@ -59,11 +59,19 @@ function SideBar() {
         </Link>
       </li>
 
-      {/*<!-- Nav Item - Movies Chart -->*/}
+      {/*<!-- Nav Item - Products Chart -->*/}
       <li className="nav-item">
         <Link className="nav-link" to="/products-chart">
           <i className="fas fa-fw fa-table"></i>
           <span>Lista de productos</span>
+        </Link>
+      </li>
+
+      {/*<!-- Nav Item - Users Chart -->*/}
+      <li className="nav-item">
+        <Link className="nav-link" to="/users-chart">
+          <i className="fas fa-fw fa-user"></i>
+          <span>Lista de usuarios</span>
         </Link>
       </li>
 

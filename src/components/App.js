@@ -8,6 +8,7 @@ import LastProductInDb from "./LastProductInDb";
 import ProductsByCategory from "./ProductsByCategory";
 import Chart from "./Chart";
 import NotFound from "./NotFound";
+import UsersChart from "./UsersChart";
 
 function App() {
   return (
@@ -20,6 +21,7 @@ function App() {
           <Route path="/last-product-in-db" component={LastProductInDb} />
           <Route path="/categories" component={ProductsByCategory} />
           <Route path="/products-chart" component={Chart} />
+          <Route path="/users-chart" component={UsersChart} />
           <Route component={NotFound} />
         </Switch>
       </EmptyWrapper>

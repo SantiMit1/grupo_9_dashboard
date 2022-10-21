@@ -1,4 +1,3 @@
-// import imagenFondo from "../assets/images/mandalorian.jpg";
 import { useEffect, useState } from 'react'
 
 function LastProductInDb() {
