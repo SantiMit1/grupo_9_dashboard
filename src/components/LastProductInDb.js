@@ -3,10 +3,12 @@ import { useEffect, useState } from 'react'
 
 function LastProductInDb() {
   const [lastProduct, setLastProduct] = useState({})
+  const [productDetail, setProductDetail] = useState("")
 
   async function getLastProduct() {
     const product = await fetch("http://ninetech.herokuapp.com/api/productos/ultimo").then(res => res.json())
     setLastProduct(product.producto)
+    setProductDetail(product.detalle)
   }
 
   useEffect(() => {
@@ -33,7 +35,7 @@ function LastProductInDb() {
           <p>
             {lastProduct.description}
           </p>
-          <a className="btn btn-danger" target="_blank" rel="nofollow" href="/">
+          <a className="btn btn-danger" target="_blank" rel="nofollow" href={`http://${productDetail}`}>
             View product detail
           </a>
         </div>
