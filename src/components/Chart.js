@@ -32,7 +32,7 @@ function Chart (){
                         </thead>
                         <tbody>
                             {products.map((product, i) => {
-                                return <ChartRow key={i} nombre={product.producto.name} precio={`$${product.producto.price}`} descripcion={product.producto.description} tipo={product.producto.type.name} marca={product.producto.brand.name} detalles={product.detalle}/>
+                                return <ChartRow key={i} nombre={product.producto.name} precio={`$${product.producto.price}`} descripcion={product.producto.description} tipo={product.producto.type.name} marca={product.producto.brand.name} detalles={product.detalle} id={product.producto.id} function={getProducts}/>
                             })}
                         </tbody>
                     </table>

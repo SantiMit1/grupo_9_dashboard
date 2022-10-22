@@ -34,7 +34,7 @@ function LastProductInDb() {
           <p>
             {lastProduct.description}
           </p>
-          <a className="btn btn-danger" target="_blank" rel="nofollow" href={`http://${productDetail}`}>
+          <a className="btn btn-danger" href={`http://${productDetail}`}>
             View product detail
           </a>
         </div>
