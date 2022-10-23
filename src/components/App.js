@@ -9,6 +9,7 @@ import ProductsByCategory from "./ProductsByCategory";
 import Chart from "./Chart";
 import NotFound from "./NotFound";
 import UsersChart from "./UsersChart";
+import CreateForm from "./CreateForm";
 
 function App() {
   return (
@@ -22,6 +23,7 @@ function App() {
           <Route path="/categories" component={ProductsByCategory} />
           <Route path="/products-chart" component={Chart} />
           <Route path="/users-chart" component={UsersChart} />
+          <Route path="/create-product" component={CreateForm} />
           <Route component={NotFound} />
         </Switch>
       </EmptyWrapper>

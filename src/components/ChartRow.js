@@ -11,10 +11,10 @@ function ChartRow(props) {
       <td>{props.nombre}</td>
       <td>{props.precio}</td>
       <td>{props.descripcion}</td>
-      <td>{props.tipo}</td>
       <td>{props.marca}</td>
+      <td>{props.tipo}</td>
       <td><a href={`http://${props.detalles}`}>Ver Detalles</a></td>
-      <td><button onClick={deleteProduct}>Eliminar producto</button></td>
+      <td><button style={{"border": "none", "backgroundColor": "transparent"}} onClick={deleteProduct}><i class="fas fa-trash" style={{"color": "red"}}></i></button></td>
     </tr>
   );
 }

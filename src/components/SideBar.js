@@ -75,6 +75,14 @@ function SideBar() {
         </Link>
       </li>
 
+      {/*<!-- Nav Item - Create Product -->*/}
+      <li className="nav-item">
+        <Link className="nav-link" to="/create-product">
+          <i className="fas fa-fw fa-plus"></i>
+          <span>Crear producto</span>
+        </Link>
+      </li>
+
       {/*<!-- Divider -->*/}
       <hr className="sidebar-divider d-none d-md-block" />
     </ul>
