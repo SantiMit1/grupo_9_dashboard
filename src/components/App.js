@@ -10,6 +10,7 @@ import Chart from "./Chart";
 import NotFound from "./NotFound";
 import UsersChart from "./UsersChart";
 import CreateForm from "./CreateForm";
+import EditForm from "./EditForm";
 
 function App() {
   return (
@@ -24,6 +25,7 @@ function App() {
           <Route path="/products-chart" component={Chart} />
           <Route path="/users-chart" component={UsersChart} />
           <Route path="/create-product" component={CreateForm} />
+          <Route path="/edit-product" component={EditForm} />
           <Route component={NotFound} />
         </Switch>
       </EmptyWrapper>

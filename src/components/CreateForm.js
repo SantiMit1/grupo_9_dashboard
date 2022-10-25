@@ -59,9 +59,13 @@ function CreateForm() {
                         })}
                     </select>
                 </div>
+                <div className="form-group">
+                    <label htmlFor="descripcion">Descripción del producto</label>
+                    <textarea className='form-control' style={{ "width": "40%", "resize": "none" }} id="descripcion" cols="30" rows="10"></textarea>
+                </div>
                 <input type="submit" value="Crear producto" />
             </form>
-            <span style={{ "color": "green" }}>Producto creado</span>
+            <span style={{ "color": "green" }}></span>
         </div>
     )
 }

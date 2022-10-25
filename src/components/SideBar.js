@@ -54,7 +54,7 @@ function SideBar() {
       {/*<!-- Nav Item - Genres In Db -->*/}
       <li className="nav-item">
         <Link className="nav-link" to="/categories">
-          <i className="fas fa-fw fa-film"></i>
+          <i className="fas fa-fw fa-hdd"></i>
           <span>Productos por categoria</span>
         </Link>
       </li>
@@ -80,6 +80,14 @@ function SideBar() {
         <Link className="nav-link" to="/create-product">
           <i className="fas fa-fw fa-plus"></i>
           <span>Crear producto</span>
+        </Link>
+      </li>
+
+      {/*<!-- Nav Item - Edit Product -->*/}
+      <li className="nav-item">
+        <Link className="nav-link" to="/edit-product">
+          <i className="fas fa-fw fa-pencil-alt"></i>
+          <span>Editar producto</span>
         </Link>
       </li>
 
