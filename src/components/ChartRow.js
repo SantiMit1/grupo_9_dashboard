@@ -1,6 +1,6 @@
 function ChartRow(props) {
   async function deleteProduct() {
-    await fetch(`http://localhost:3001/api/productos/detalles/borrar/${props.id}`, {
+    await fetch(`http://ninetech.herokuapp.com/api/productos/detalles/borrar/${props.id}`, {
       method: "delete"
     })
     props.function()

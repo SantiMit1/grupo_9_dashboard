@@ -13,18 +13,43 @@ function EditForm() {
     const tipo = useRef()
     const marca = useRef()
     const descripcion = useRef()
+    const productId = useRef()
 
     async function getOptions() {
-        const marcasApi = await fetch("http://localhost:3001/api/productos/marcas").then(res => res.json())
+        const marcasApi = await fetch("http://ninetech.herokuapp.com/api/productos/marcas").then(res => res.json())
         setMarcas(marcasApi)
 
-        const tiposApi = await fetch("http://localhost:3001/api/productos/tipos").then(res => res.json())
+        const tiposApi = await fetch("http://ninetech.herokuapp.com/api/productos/tipos").then(res => res.json())
         setTipos(tiposApi)
     }
 
     async function getProduct(e) {
-        const product = await fetch(`https://ninetech.herokuapp.com/api/productos/detalles/${e.target.value}`).then(res => res.json()).then(data => data.producto)
+        const product = await fetch(`http://ninetech.herokuapp.com/api/productos/detalles/${e.target.value}`).then(res => res.json()).then(data => data.producto)
         setProducto(product)
+    }
+
+    async function editProduct(e) {
+        e.preventDefault()
+
+        const productoAEditar = {
+            name: nombre.current.value,
+            price: Number(precio.current.value),
+            description: descripcion.current.value,
+            enOferta: descuento.current.value ? 1 : 0,
+            discount: Number(descuento.current.value),
+            category: Number(categoria.current.value),
+            type: Number(tipo.current.value),
+            brand: Number(marca.current.value)
+        }
+
+        await fetch(`http://ninetech.herokuapp.com/api/productos/detalles/editar/${productId.current.value}`, {
+            method: "PUT",
+            headers: {
+                'Accept': 'application/json',
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(productoAEditar)
+        }).then(res => res.json())
     }
 
     useEffect(() => {
@@ -50,7 +75,7 @@ function EditForm() {
             <form>
                 <div className="form-group">
                     <label htmlFor="id">Id del producto</label>
-                    <input onBlur={getProduct} className="form-control" style={{ "width": "40%" }} type="number" id="nombre" required />
+                    <input ref={productId} onBlur={getProduct} className="form-control" style={{ "width": "40%" }} type="number" id="nombre" required />
                 </div>
                 <div className="form-group">
                     <label htmlFor="nombre">Nombre del producto</label>
@@ -95,7 +120,7 @@ function EditForm() {
                     <label htmlFor="descripcion">Descripción del producto</label>
                     <textarea ref={descripcion} className='form-control' style={{ "width": "40%", "resize": "none" }} id="descripcion" cols="30" rows="10"></textarea>
                 </div>
-                <input type="submit" value="Editar producto" />
+                <input onClick={editProduct} type="submit" value="Editar producto" />
             </form>
             <span style={{ "color": "green" }}></span>
         </div>

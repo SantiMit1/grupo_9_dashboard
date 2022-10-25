@@ -15,10 +15,10 @@ function CreateForm() {
     const feedback = useRef()
 
     async function getOptions() {
-        const marcasApi = await fetch("http://localhost:3001/api/productos/marcas").then(res => res.json())
+        const marcasApi = await fetch("http://ninetech.herokuapp.com/api/productos/marcas").then(res => res.json())
         setMarcas(marcasApi)
 
-        const tiposApi = await fetch("http://localhost:3001/api/productos/tipos").then(res => res.json())
+        const tiposApi = await fetch("http://ninetech.herokuapp.com/api/productos/tipos").then(res => res.json())
         setTipos(tiposApi)
     }
 
@@ -36,11 +36,7 @@ function CreateForm() {
             brand: Number(marca.current.value)
         }
 
-        console.log(producto)
-        console.log(tipo);
-        console.log(marca);
-
-        const productoCreado = await fetch("http://localhost:3001/api/productos/crear", {
+        await fetch("http://ninetech.herokuapp.com/api/productos/crear", {
             method: "POST",
             headers: {
                 'Accept': 'application/json',
@@ -48,10 +44,6 @@ function CreateForm() {
             },
             body: JSON.stringify(producto)
         }).then(res => res.json())
-
-        console.log(productoCreado)
-        
-        feedback.current.value = "producto creado"
     }
 
     useEffect(() => {
