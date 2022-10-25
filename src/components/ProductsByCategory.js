@@ -23,9 +23,14 @@ function ProductsByCategory() {
         </div>
         <div className="card-body">
           <div className="row">
-            <Categories category="Hardware" count={categoriesCount.Hardware} />
-            <Categories category="Audio y video" count={categoriesCount["Audio y video"]} />
-            <Categories category="Mouse y teclados" count={categoriesCount["Mouse y teclados"]} />
+            <Categories category="CPU" count={categoriesCount.CPU} />
+            <Categories category="GPU" count={categoriesCount.GPU} />
+            <Categories category="RAM" count={categoriesCount.RAM} />
+            <Categories category="HDD" count={categoriesCount.HDD} />
+            <Categories category="SSD" count={categoriesCount.SSD} />
+            <Categories category="FUENTES" count={categoriesCount.FUENTES} />
+            <Categories category="MOTHERBOARDS" count={categoriesCount.MOTHERBOARDS} />
+            <Categories category="PERIFERICOS" count={categoriesCount.PERIFERICOS} />
           </div>
         </div>
       </div>
