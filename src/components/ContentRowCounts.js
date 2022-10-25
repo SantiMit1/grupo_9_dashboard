@@ -6,12 +6,12 @@ function ContentRowCounts() {
   const [usersCount, setUsersCount] = useState()
 
   async function getProductsCount() {
-    const products = await fetch("http://ninetech.herokuapp.com/api/productos").then(res => res.json())
+    const products = await fetch("http://localhost:3001/api/productos").then(res => res.json())
     setProductsCount(products.count)
   }
 
   async function getUsersCount() {
-    const users = await fetch("http://ninetech.herokuapp.com/api/users").then(res => res.json())
+    const users = await fetch("http://localhost:3001/api/users").then(res => res.json())
     setUsersCount(users.count)
   }
 

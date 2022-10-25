@@ -5,7 +5,7 @@ function LastProductInDb() {
   const [productDetail, setProductDetail] = useState("")
 
   async function getLastProduct() {
-    const product = await fetch("http://ninetech.herokuapp.com/api/productos/ultimo").then(res => res.json())
+    const product = await fetch("http://localhost:3001/api/productos/ultimo").then(res => res.json())
     setLastProduct(product.producto)
     setProductDetail(product.detalle)
   }

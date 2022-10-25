@@ -15,10 +15,10 @@ function EditForm() {
     const descripcion = useRef()
 
     async function getOptions() {
-        const marcasApi = await fetch("http://ninetech.herokuapp.com/api/productos/marcas").then(res => res.json())
+        const marcasApi = await fetch("http://localhost:3001/api/productos/marcas").then(res => res.json())
         setMarcas(marcasApi)
 
-        const tiposApi = await fetch("http://ninetech.herokuapp.com/api/productos/tipos").then(res => res.json())
+        const tiposApi = await fetch("http://localhost:3001/api/productos/tipos").then(res => res.json())
         setTipos(tiposApi)
     }
 

@@ -6,7 +6,7 @@ function UsersChart() {
     const [users, setUsers] = useState([]);
 
     async function getUsers() {
-        const allUsers = await fetch("http://ninetech.herokuapp.com/api/users/").then(res => res.json()).then(data => data.data)
+        const allUsers = await fetch("http://localhost:3001/api/users/").then(res => res.json()).then(data => data.data)
         setUsers(allUsers)
     }
 
