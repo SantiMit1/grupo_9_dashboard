@@ -14,6 +14,7 @@ function EditForm() {
     const marca = useRef()
     const descripcion = useRef()
     const productId = useRef()
+    const feedback = useRef()
 
     async function getOptions() {
         const marcasApi = await fetch("http://ninetech.herokuapp.com/api/productos/marcas").then(res => res.json())
@@ -50,6 +51,8 @@ function EditForm() {
             },
             body: JSON.stringify(productoAEditar)
         }).then(res => res.json())
+
+        feedback.current.innerText = "Producto editado"
     }
 
     useEffect(() => {
@@ -93,9 +96,9 @@ function EditForm() {
                     <label htmlFor="categoria">Categoria del producto</label>
                     <select ref={categoria} className="form-control" style={{ "width": "40%" }} id="categoria" required>
                         <option value="">Seleccione una opción</option>
-                        <option value="1" selected={producto && producto.category_id == 1}>Hardware</option>
-                        <option value="2" selected={producto && producto.category_id == 2}>Audio y video</option>
-                        <option value="3" selected={producto && producto.category_id == 3}>Mouse y teclado</option>
+                        <option value="1" selected={producto && producto.category_id === 1}>Hardware</option>
+                        <option value="2" selected={producto && producto.category_id === 2}>Audio y video</option>
+                        <option value="3" selected={producto && producto.category_id === 3}>Mouse y teclado</option>
                     </select>
                 </div>
                 <div className="form-group">
@@ -103,7 +106,7 @@ function EditForm() {
                     <select ref={tipo} className="form-control" style={{ "width": "40%" }} id="tipo" required>
                         <option value="">Seleccione una opción</option>
                         {tipos && tipos.map((tipo, i) => {
-                            return <option selected={producto && producto.type_id == tipo.id} value={tipo.id} key={i}>{tipo.name}</option>
+                            return <option selected={producto && producto.type_id === tipo.id} value={tipo.id} key={i}>{tipo.name}</option>
                         })}
                     </select>
                 </div>
@@ -112,7 +115,7 @@ function EditForm() {
                     <select ref={marca} className="form-control" style={{ "width": "40%" }} id="marca" required>
                         <option value="">Seleccione una opción</option>
                         {marcas && marcas.map((marca, i) => {
-                            return <option selected={producto && producto.brand_id == marca.id} value={marca.id} key={i}>{marca.name}</option>
+                            return <option selected={producto && producto.brand_id === marca.id} value={marca.id} key={i}>{marca.name}</option>
                         })}
                     </select>
                 </div>
@@ -122,7 +125,7 @@ function EditForm() {
                 </div>
                 <input onClick={editProduct} type="submit" value="Editar producto" />
             </form>
-            <span style={{ "color": "green" }}></span>
+            <span ref={feedback} style={{ "color": "green" }}></span>
         </div>
     )
 }

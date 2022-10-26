@@ -44,6 +44,8 @@ function CreateForm() {
             },
             body: JSON.stringify(producto)
         }).then(res => res.json())
+
+        feedback.current.innerText = "Producto creado"
     }
 
     useEffect(() => {
