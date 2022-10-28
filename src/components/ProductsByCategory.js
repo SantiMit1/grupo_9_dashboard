@@ -5,7 +5,7 @@ function ProductsByCategory() {
   const [categoriesCount, setCategoriesCount] = useState({})
 
   async function getCategoriesCount() {
-    const categories = await fetch("http://ninetech.herokuapp.com/api/productos").then(res => res.json()).then(data => data.countByCategory)
+    const categories = await fetch("https://ninetech.herokuapp.com/api/productos").then(res => res.json()).then(data => data.countByCategory)
     setCategoriesCount(categories)
   }
 

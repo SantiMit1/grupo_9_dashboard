@@ -6,7 +6,7 @@ function Chart (){
     const [products, setProducts] = useState([]);
 
     async function getProducts() {
-        const allProducts = await fetch("http://ninetech.herokuapp.com/api/productos/").then(res => res.json()).then(data => data.data)
+        const allProducts = await fetch("https://ninetech.herokuapp.com/api/productos/").then(res => res.json()).then(data => data.data)
         setProducts(allProducts)
     }
 
