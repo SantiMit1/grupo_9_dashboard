@@ -1,6 +1,6 @@
 function ChartRow(props) {
   async function deleteProduct() {
-    await fetch(`http://ninetech.herokuapp.com/api/productos/detalles/borrar/${props.id}`, {
+    await fetch(`https://ninetech.herokuapp.com/api/productos/detalles/borrar/${props.id}`, {
       method: "delete"
     })
     props.function()
@@ -13,7 +13,7 @@ function ChartRow(props) {
       <td>{props.descripcion}</td>
       <td>{props.marca}</td>
       <td>{props.tipo}</td>
-      <td><a href={`http://${props.detalles}`}>Ver Detalles</a></td>
+      <td><a href={`https://${props.detalles}`}>Ver Detalles</a></td>
       <td><button style={{"border": "none", "backgroundColor": "transparent"}} onClick={deleteProduct}><i class="fas fa-trash" style={{"color": "red"}}></i></button></td>
     </tr>
   );

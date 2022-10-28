@@ -27,14 +27,14 @@ function LastProductInDb() {
             <img
               className="img-fluid px-3 px-sm-4 mt-3 mb-4"
               style={{ width: 40 + "rem" }}
-              src={`http://${lastProduct.image}`}
+              src={`https://${lastProduct.image}`}
               alt={lastProduct.name}
             />
           </div>
           <p>
             {lastProduct.description}
           </p>
-          <a className="btn btn-danger" href={`http://${productDetail}`}>
+          <a className="btn btn-danger" href={`https://${productDetail}`}>
             View product detail
           </a>
         </div>

@@ -25,7 +25,7 @@ function EditForm() {
     }
 
     async function getProduct(e) {
-        const product = await fetch(`http://ninetech.herokuapp.com/api/productos/detalles/${e.target.value}`).then(res => res.json()).then(data => data.producto)
+        const product = await fetch(`https://ninetech.herokuapp.com/api/productos/detalles/${e.target.value}`).then(res => res.json()).then(data => data.producto)
         setProducto(product)
     }
 
@@ -43,7 +43,7 @@ function EditForm() {
             brand: Number(marca.current.value)
         }
 
-        await fetch(`http://ninetech.herokuapp.com/api/productos/detalles/editar/${productId.current.value}`, {
+        await fetch(`https://ninetech.herokuapp.com/api/productos/detalles/editar/${productId.current.value}`, {
             method: "PUT",
             headers: {
                 'Accept': 'application/json',
