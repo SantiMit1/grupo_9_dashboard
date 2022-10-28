@@ -57,19 +57,19 @@ function CreateForm() {
             <form>
                 <div className="form-group">
                     <label htmlFor="nombre">Nombre del producto</label>
-                    <input ref={nombre} className="form-control" style={{ "width": "20%" }} type="text" id="nombre" required />
+                    <input ref={nombre} className="form-control" style={{ "width": "40%" }} type="text" id="nombre" required />
                 </div>
                 <div className="form-group">
                     <label htmlFor="precio">Precio del producto</label>
-                    <input ref={precio} className="form-control" style={{ "width": "20%" }} type="number" id="precio" required min={1} />
+                    <input ref={precio} className="form-control" style={{ "width": "40%" }} type="number" id="precio" required min={1} />
                 </div>
                 <div className="form-group">
                     <label htmlFor="descuento">Descuento del producto</label>
-                    <input ref={descuento} className="form-control" style={{ "width": "20%" }} type="number" id="descuento" min={0} max={100} />
+                    <input ref={descuento} className="form-control" style={{ "width": "40%" }} type="number" id="descuento" min={0} max={100} />
                 </div>
                 <div className="form-group">
                     <label htmlFor="categoria">Categoria del producto</label>
-                    <select ref={categoria} className="form-control" style={{ "width": "20%" }} id="categoria" required>
+                    <select ref={categoria} className="form-control" style={{ "width": "40%" }} id="categoria" required>
                         <option value="">Seleccione una opción</option>
                         <option value="1">Hardware</option>
                         <option value="2">Audio y video</option>
@@ -78,7 +78,7 @@ function CreateForm() {
                 </div>
                 <div className="form-group">
                     <label htmlFor="tipo">Tipo de producto</label>
-                    <select ref={tipo} className="form-control" style={{ "width": "20%" }} id="tipo" required>
+                    <select ref={tipo} className="form-control" style={{ "width": "40%" }} id="tipo" required>
                         <option value="">Seleccione una opción</option>
                         {tipos && tipos.map((tipo, i) => {
                             return <option value={tipo.id} key={i}>{tipo.name}</option>
@@ -87,7 +87,7 @@ function CreateForm() {
                 </div>
                 <div className="form-group">
                     <label htmlFor="marca">Marca del producto</label>
-                    <select ref={marca} className="form-control" style={{ "width": "20%" }} id="marca" required>
+                    <select ref={marca} className="form-control" style={{ "width": "40%" }} id="marca" required>
                         <option value="">Seleccione una opción</option>
                         {marcas && marcas.map((marca, i) => {
                             return <option value={marca.id} key={i}>{marca.name}</option>
