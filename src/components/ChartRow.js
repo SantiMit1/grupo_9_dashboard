@@ -14,7 +14,7 @@ function ChartRow(props) {
       <td>{props.marca}</td>
       <td>{props.tipo}</td>
       <td><a href={`https://${props.detalles}`}>Ver Detalles</a></td>
-      <td><button style={{"border": "none", "backgroundColor": "transparent"}} onClick={deleteProduct}><i class="fas fa-trash" style={{"color": "red"}}></i></button></td>
+      <td><button style={{"border": "none", "backgroundColor": "transparent"}} onClick={deleteProduct}><i className="fas fa-trash" style={{"color": "red"}}></i></button></td>
     </tr>
   );
 }
