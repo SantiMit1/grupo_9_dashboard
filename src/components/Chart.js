@@ -28,6 +28,7 @@ function Chart() {
                     <table className="table table-bordered" id="dataTable" width="100%" cellSpacing="0">
                         <thead>
                             <tr>
+                                <th>Id</th>
                                 <th>Nombre</th>
                                 <th>Precio</th>
                                 <th>Descripcion</th>
@@ -38,7 +39,7 @@ function Chart() {
                         </thead>
                         <tbody>
                             {products.length > 0 ? products.map((product, i) => {
-                                return <ChartRow key={i} nombre={product.producto.name} precio={`$${product.producto.price}`} descripcion={product.producto.description} tipo={product.producto.type.name} marca={product.producto.brand.name} detalles={product.detalle} id={product.producto.id} function={getProducts} />
+                                return <ChartRow key={i} productId={product.producto.id} nombre={product.producto.name} precio={`$${product.producto.price}`} descripcion={product.producto.description} tipo={product.producto.type.name} marca={product.producto.brand.name} detalles={product.detalle} id={product.producto.id} function={getProducts} />
                             }) : (<p>No se encontraron productos</p>)}
                         </tbody>
                     </table>

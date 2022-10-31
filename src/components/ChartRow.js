@@ -8,13 +8,14 @@ function ChartRow(props) {
 
   return (
     <tr>
+      <td>{props.productId}</td>
       <td>{props.nombre}</td>
       <td>{props.precio}</td>
       <td>{props.descripcion}</td>
       <td>{props.marca}</td>
       <td>{props.tipo}</td>
       <td><a href={`https://${props.detalles}`}>Ver Detalles</a></td>
-      <td><button style={{"border": "none", "backgroundColor": "transparent"}} onClick={deleteProduct}><i className="fas fa-trash" style={{"color": "red"}}></i></button></td>
+      <td><button style={{"border": "none", "backgroundColor": "transparent", "color": "red"}} onClick={deleteProduct}><i className="fas fa-trash"></i></button></td>
     </tr>
   );
 }
