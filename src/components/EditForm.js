@@ -61,10 +61,10 @@ function EditForm() {
 
     useEffect(() => {
         if (producto) {
-            nombre.current.value = producto.name
+            nombre.current.value = producto.name ? producto.name : ""
             precio.current.value = producto.price
             descuento.current.value = producto.discount
-            descripcion.current.value = producto.description
+            descripcion.current.value = producto.description ? producto.description : ""
         } else {
             nombre.current.value = ""
             precio.current.value = ""
