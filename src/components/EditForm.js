@@ -43,16 +43,28 @@ function EditForm() {
             brand: Number(marca.current.value)
         }
 
-        await fetch(`https://ninetech.herokuapp.com/api/productos/detalles/editar/${productId.current.value}`, {
-            method: "PUT",
-            headers: {
-                'Accept': 'application/json',
-                'Content-Type': 'application/json'
-            },
-            body: JSON.stringify(productoAEditar)
-        }).then(res => res.json())
+        if (productId.current.value
+            &&productoAEditar.name
+            && productoAEditar.price
+            && productoAEditar.description
+            && productoAEditar.category
+            && productoAEditar.type
+            && productoAEditar.brand) {
+            await fetch(`https://ninetech.herokuapp.com/api/productos/detalles/editar/${productId.current.value}`, {
+                method: "PUT",
+                headers: {
+                    'Accept': 'application/json',
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify(productoAEditar)
+            }).then(res => res.json())
 
-        feedback.current.innerText = "Producto editado"
+            feedback.current.style.color = "green"
+            feedback.current.innerText = "Producto editado"
+        } else {
+            feedback.current.style.color = "red"
+            feedback.current.innerText = "Completa los datos restantes"
+        }
     }
 
     useEffect(() => {
@@ -125,7 +137,7 @@ function EditForm() {
                 </div>
                 <input onClick={editProduct} type="submit" value="Editar producto" />
             </form>
-            <span ref={feedback} style={{ "color": "green" }}></span>
+            <span ref={feedback}></span>
         </div>
     )
 }

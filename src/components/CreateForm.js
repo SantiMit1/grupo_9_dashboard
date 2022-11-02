@@ -36,16 +36,27 @@ function CreateForm() {
             brand: Number(marca.current.value)
         }
 
-        await fetch("https://ninetech.herokuapp.com/api/productos/crear", {
-            method: "POST",
-            headers: {
-                'Accept': 'application/json',
-                'Content-Type': 'application/json'
-            },
-            body: JSON.stringify(producto)
-        }).then(res => res.json())
+        if (producto.name
+            && producto.price
+            && producto.description
+            && producto.category
+            && producto.type
+            && producto.brand) {
+            await fetch("https://ninetech.herokuapp.com/api/productos/crear", {
+                method: "POST",
+                headers: {
+                    'Accept': 'application/json',
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify(producto)
+            }).then(res => res.json())
 
-        feedback.current.innerText = "Producto creado"
+            feedback.current.style.color = "green"
+            feedback.current.innerText = "Producto creado"
+        } else {
+            feedback.current.style.color = "red"
+            feedback.current.innerText = "Completa los datos restantes"
+        }
     }
 
     useEffect(() => {
@@ -100,7 +111,7 @@ function CreateForm() {
                 </div>
                 <input onClick={createProduct} type="submit" value="Crear producto" />
             </form>
-            <span ref={feedback} style={{ "color": "green" }}></span>
+            <span ref={feedback}></span>
         </div>
     )
 }
