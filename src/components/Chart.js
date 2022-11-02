@@ -31,7 +31,7 @@ function Chart() {
     }
     
     function handleRightArrow() {
-        if((pagina + 1) <= (total / 3)) {
+        if(pagina < (total / 3)) {
             busqueda.current.value = ""
             setPagina(pagina + 1)
         }
