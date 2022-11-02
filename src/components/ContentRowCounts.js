@@ -24,7 +24,6 @@ function ContentRowCounts() {
     <div className="row">
       <SmallCard title="Productos Registrados" quantity={productsCount} icon="fa-clipboard-list" />
       <SmallCard title="Usuarios Registrados" quantity={usersCount} icon="fa-user" />
-      {/* <SmallCard title="Cantidad de productos" quantity={productsCount} /> */}
     </div>
   );
 }
