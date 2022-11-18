@@ -15,10 +15,10 @@ function CreateForm() {
     const feedback = useRef()
 
     async function getOptions() {
-        const marcasApi = await fetch("https://ninetech.herokuapp.com/api/productos/marcas").then(res => res.json())
+        const marcasApi = await fetch("https://ninetech.up.railway.app/api/productos/marcas").then(res => res.json())
         setMarcas(marcasApi)
 
-        const tiposApi = await fetch("https://ninetech.herokuapp.com/api/productos/tipos").then(res => res.json())
+        const tiposApi = await fetch("https://ninetech.up.railway.app/api/productos/tipos").then(res => res.json())
         setTipos(tiposApi)
     }
 
@@ -42,7 +42,7 @@ function CreateForm() {
             && producto.category
             && producto.type
             && producto.brand) {
-            await fetch("https://ninetech.herokuapp.com/api/productos/crear", {
+            await fetch("https://ninetech.up.railway.app/api/productos/crear", {
                 method: "POST",
                 headers: {
                     'Accept': 'application/json',

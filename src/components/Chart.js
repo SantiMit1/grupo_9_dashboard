@@ -9,16 +9,16 @@ function Chart() {
     const busqueda = useRef()
 
     async function getTotal() {
-        const productosTotales = await fetch("https://ninetech.herokuapp.com/api/productos").then(res => res.json()).then(data => data.count)
+        const productosTotales = await fetch("https://ninetech.up.railway.app/api/productos").then(res => res.json()).then(data => data.count)
         setTotal(productosTotales)
     }
 
     async function getProducts() {
         let allProducts = []
         if (busqueda.current.value) {
-            allProducts = await fetch(`https://ninetech.herokuapp.com/api/productos/busqueda?q=${busqueda.current.value}`).then(res => res.json()).then(data => data.data)
+            allProducts = await fetch(`https://ninetech.up.railway.app/api/productos/busqueda?q=${busqueda.current.value}`).then(res => res.json()).then(data => data.data)
         } else {
-            allProducts = await fetch(`https://ninetech.herokuapp.com/api/productos?pagina=${pagina}`).then(res => res.json()).then(data => data.data)
+            allProducts = await fetch(`https://ninetech.up.railway.app/api/productos?pagina=${pagina}`).then(res => res.json()).then(data => data.data)
         }
         setProducts(allProducts)
     }

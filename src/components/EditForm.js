@@ -17,15 +17,15 @@ function EditForm() {
     const feedback = useRef()
 
     async function getOptions() {
-        const marcasApi = await fetch("https://ninetech.herokuapp.com/api/productos/marcas").then(res => res.json())
+        const marcasApi = await fetch("https://ninetech.up.railway.app/api/productos/marcas").then(res => res.json())
         setMarcas(marcasApi)
 
-        const tiposApi = await fetch("https://ninetech.herokuapp.com/api/productos/tipos").then(res => res.json())
+        const tiposApi = await fetch("https://ninetech.up.railway.app/api/productos/tipos").then(res => res.json())
         setTipos(tiposApi)
     }
 
     async function getProduct(e) {
-        const product = await fetch(`https://ninetech.herokuapp.com/api/productos/detalles/${e.target.value}`).then(res => res.json()).then(data => data.producto)
+        const product = await fetch(`https://ninetech.up.railway.app/api/productos/detalles/${e.target.value}`).then(res => res.json()).then(data => data.producto)
         setProducto(product)
     }
 
@@ -50,7 +50,7 @@ function EditForm() {
             && productoAEditar.category
             && productoAEditar.type
             && productoAEditar.brand) {
-            await fetch(`https://ninetech.herokuapp.com/api/productos/detalles/editar/${productId.current.value}`, {
+            await fetch(`https://ninetech.up.railway.app/api/productos/detalles/editar/${productId.current.value}`, {
                 method: "PUT",
                 headers: {
                     'Accept': 'application/json',
